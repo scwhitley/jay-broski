@@ -12,6 +12,7 @@ TT = "https://www.tiktok.com/@thejaybroski"
 IG = "https://www.instagram.com/thejaybroskitv/"
 XX = "https://twitter.com/TheJayBroski"
 DC = "https://discord.com/invite/Ztpg7hxD7X"
+RU = "https://rumble.com/user/jaybroski"
 MERCH = "https://streamlabs.com/thejaybroski/merch"
 DEMON = "https://demon-workshop.com/?ref=jaybroski"
 MONSTER = "https://www.monsterenergy.com/en-us/gaming/jaybroski/"
@@ -26,6 +27,7 @@ SOCIALS = f"""<nav class="socials" aria-label="Socials">
         <a href="{IG}" aria-label="Instagram"><span class="ico i-instagram"></span></a>
         <a href="{XX}" aria-label="X"><span class="ico i-x"></span></a>
         <a href="{DC}" aria-label="Discord"><span class="ico i-discord"></span></a>
+        <a href="{RU}" aria-label="Rumble"><span class="ico i-rumble"></span></a>
       </nav>"""
 
 TICKER = """<div class="ticker" aria-hidden="true"><div class="track">
@@ -84,10 +86,12 @@ PAGES = {
   </section>
   {TICKER}
   <section class="block">
-    <div class="wrap grid-3">
+    <div class="wrap grid-4">
       <div class="stat"><strong>89K+</strong><span>Twitch followers</span></div>
+      <div class="stat"><strong>747K</strong><span>TikTok followers</span></div>
       <div class="stat"><strong>53.1K</strong><span>YouTube subscribers</span></div>
       <div class="stat"><strong>7.4M+</strong><span>YouTube views</span></div>
+      <div class="stat"><strong>22.3M</strong><span>TikTok likes</span></div>
       <div class="stat"><strong>4,900</strong><span>Peak live viewers</span></div>
       <div class="stat"><strong>Top 30</strong><span>English Warzone channels</span></div>
       <div class="stat"><strong>12 yrs</strong><span>On Twitch</span></div>
@@ -213,15 +217,17 @@ PAGES = {
   <section class="block" style="padding-top:0">
     <div class="wrap">
       <div class="sec-head"><div><p class="eyebrow">Media kit</p><h2>By the numbers</h2></div></div>
-      <div class="grid-3">
+      <div class="grid-4">
         <div class="stat"><strong>89K+</strong><span>Twitch followers</span></div>
+        <div class="stat"><strong>747K</strong><span>TikTok followers</span></div>
         <div class="stat"><strong>53.1K</strong><span>YouTube subscribers</span></div>
         <div class="stat"><strong>7.4M+</strong><span>YouTube views</span></div>
+        <div class="stat"><strong>22.3M</strong><span>TikTok likes</span></div>
         <div class="stat"><strong>4,900</strong><span>Peak live viewers</span></div>
         <div class="stat"><strong>100+</strong><span>Hours live per month</span></div>
         <div class="stat"><strong>Top 30</strong><span>English Warzone channels</span></div>
       </div>
-      <p class="muted" style="margin-top:14px;font-size:14px">Public Twitch and YouTube stats, November 2026. A downloadable media kit PDF can sit here.</p>
+      <p class="muted" style="margin-top:14px;font-size:14px">Public Twitch, YouTube and TikTok stats, November 2026. A downloadable media kit PDF can sit here.</p>
     </div>
   </section>
   <section class="block" id="inquiry" style="padding-top:0">

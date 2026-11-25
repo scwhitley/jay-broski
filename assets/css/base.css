@@ -90,6 +90,7 @@ button { font: inherit; color: inherit; }
 .i-discord   { -webkit-mask-image: url(../icons/discord.svg);   mask-image: url(../icons/discord.svg); }
 .i-tiktok    { -webkit-mask-image: url(../icons/tiktok.svg);    mask-image: url(../icons/tiktok.svg); }
 .i-instagram { -webkit-mask-image: url(../icons/instagram.svg); mask-image: url(../icons/instagram.svg); }
+.i-rumble    { -webkit-mask-image: url(../icons/rumble.svg);    mask-image: url(../icons/rumble.svg); }
 .i-x         { -webkit-mask-image: url(../icons/x.svg);         mask-image: url(../icons/x.svg); }
 
 /* Live pill */
