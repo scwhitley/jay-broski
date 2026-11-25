@@ -15,7 +15,7 @@ DC = "https://discord.com/invite/Ztpg7hxD7X"
 MERCH = "https://streamlabs.com/thejaybroski/merch"
 DEMON = "https://demon-workshop.com/?ref=jaybroski"
 MONSTER = "https://www.monsterenergy.com/en-us/gaming/jaybroski/"
-EMAIL = "thejaybroski@gmail.com"
+EMAIL = "jaybroski@bavamedia.com"
 
 NAV = [("", "Home"), ("live/", "Live"), ("videos/", "Videos"), ("partners/", "Partners"), ("shop/", "Merch"), ("about/", "About")]
 
