@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaybroski | Website concepts by Distorted Web</title>
+  <meta name="description" content="Three website concepts for Jaybroski: a link page, a one-page site, and a full website.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <style>
+    body { background: radial-gradient(800px 500px at 50% -200px, rgba(198,255,26,.2), transparent 70%), radial-gradient(600px 400px at 100% 60%, rgba(255,90,31,.14), transparent 70%), var(--ink); }
+    .hero { padding: 70px 0 44px; text-align: center; }
+    .hero .badge { --s: 92px; margin: 0 auto 24px; }
+    .hero h1 { font-size: clamp(52px, 10vw, 120px); line-height: .88; margin-top: 14px; }
+    .hero p.lead { max-width: 580px; margin: 20px auto 0; color: var(--muted); font-size: 18px; }
+    .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); padding-bottom: 40px; }
+    .opt { display: flex; flex-direction: column; gap: 14px; padding: 24px; background: var(--card); border: 1px solid var(--line); text-decoration: none;
+      clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px); transition: transform .15s, border-color .15s; }
+    .opt:hover { transform: translateY(-6px) rotate(-.6deg); border-color: var(--volt); }
+    .opt .preview { height: 150px; background: var(--ink-2); position: relative; overflow: hidden; }
+    .opt h2 { font-size: 40px; }
+    .opt .price { font: 700 13px/1 var(--hud); color: var(--volt); letter-spacing: .14em; text-transform: uppercase; }
+    .opt ul { margin: 0; padding-left: 18px; color: var(--muted); font-size: 15px; }
+    .opt .go { margin-top: auto; font: 700 14px/1 var(--hud); letter-spacing: .12em; text-transform: uppercase; }
+    .opt .go::after { content: " →"; color: var(--volt); }
+    .wf-link { display: grid; gap: 7px; width: 46%; margin: 16px auto; }
+    .wf-link i { height: 14px; background: var(--card-2); }
+    .wf-link i:first-child { width: 36px; height: 36px; margin: 0 auto 4px; background: var(--volt); transform: rotate(-4deg); }
+    .wf-link i:nth-child(3) { background: #9146ff; }
+    .wf-one { position: absolute; inset: 14px; display: grid; gap: 8px; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 46px 1fr; }
+    .wf-one i { background: var(--card-2); }
+    .wf-one i:first-child { grid-column: 1 / -1; background: var(--hype); }
+    .wf-one b { position: absolute; right: 16%; bottom: 8%; width: 44%; height: 58%; background: var(--ink); box-shadow: 0 0 0 2px var(--volt), 8px 8px 0 var(--blaze); }
+    .wf-full { position: absolute; inset: 14px; display: grid; gap: 8px; grid-template-rows: 12px 50px 1fr; }
+    .wf-full i { background: var(--card-2); }
+    .wf-full > i:nth-child(2) { background: var(--hype); }
+    .wf-full span { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .note { max-width: 700px; margin: 0 auto 30px; padding: 18px 22px; border: 2px dashed var(--line); color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Website concepts for Jaybroski, made by <a href="https://distortedbrands.com/web/">Distorted Web</a></div>
+  <main class="wrap">
+    <header class="hero">
+      <div class="badge" aria-hidden="true">JB</div>
+      <p class="eyebrow">Call of Duty · GTA VI · Officer Broski</p>
+      <h1>Three ways to put <span class="hype-text">Jaybroski</span> online</h1>
+      <p class="lead">Pick a size. Each one is clickable, uses your real links and partners, and works on phones. Clips and photos are placeholders until we swap in yours.</p>
+    </header>
+    <section class="grid" aria-label="Concepts">
+      <a class="opt" href="link/">
+        <div class="preview"><div class="wf-link"><i></i><i></i><i></i><i></i><i></i></div></div>
+        <span class="price">Link page · from $100</span>
+        <h2>Link page</h2>
+        <ul><li>Replaces Linktree with your own look</li><li>Live-on-Twitch banner and latest video</li><li>Partners, merch and a business email button</li></ul>
+        <span class="go">Open the link page</span>
+      </a>
+      <a class="opt" href="one-page/">
+        <div class="preview"><div class="wf-one"><i></i><i></i><i></i><i></i><b></b></div></div>
+        <span class="price">One-pager · from $200</span>
+        <h2>One-page site</h2>
+        <ul><li>Live, clips, Officer Broski, partners and merch on one scroll</li><li>Pop-ups for videos, schedule, bio and sponsor inquiries</li><li>Fast to update and easy to share</li></ul>
+        <span class="go">Open the one-pager</span>
+      </a>
+      <a class="opt" href="full/">
+        <div class="preview"><div class="wf-full"><i></i><i></i><span><i></i><i></i><i></i><i></i></span></div></div>
+        <span class="price">Full website · from $300</span>
+        <h2>Full website</h2>
+        <ul><li>Home, Live, Videos, Partners, Merch and About pages</li><li>Partners page doubles as a media kit for brands</li><li>Sponsor inquiry form with budget and campaign type</li></ul>
+        <span class="go">Open the full site</span>
+      </a>
+    </section>
+    <p class="note">These are preview mockups. Video titles, merch items, prices, schedule times and the bio are sample content. Stats come from public Twitch data (November 2026). Links to Twitch, YouTube, TikTok, Instagram, X, Discord, merch, Monster Energy and Demon Workshop are your real ones.</p>
+  </main>
+  <footer class="credit">Designed by <a href="https://distortedbrands.com/web/">Distorted Web</a> · Websites that cut through.</footer>
+</body>
+</html>

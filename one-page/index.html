@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaybroski | Call of Duty, GTA VI and Officer Broski</title>
+  <meta name="description" content="Jaybroski: Twitch Partner, Warzone comedian and Monster Energy creator. Live streams, videos, partners and business inquiries.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <style>
+    .nav { position: sticky; top: 0; z-index: 20; background: rgba(7,8,11,.88); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav .wrap { display: flex; align-items: center; gap: 18px; height: 66px; }
+    .nav .badge { --s: 40px; }
+    .nav .name { font: 400 26px/1 var(--display); text-transform: uppercase; text-decoration: none; }
+    .nav ul { display: flex; gap: 22px; margin: 0 0 0 auto; padding: 0; list-style: none; }
+    .nav ul a { font: 700 13px/1 var(--hud); letter-spacing: .12em; text-transform: uppercase; text-decoration: none; color: var(--muted); }
+    .nav ul a:hover { color: var(--volt); }
+    .nav .btn { padding: 11px 18px; font-size: 13px; }
+    @media (max-width: 860px) { .nav ul { display: none; } .nav .btn { margin-left: auto; } }
+
+    .hero { position: relative; padding: clamp(56px, 10vw, 120px) 0 70px; overflow: hidden;
+      background:
+        radial-gradient(800px 500px at 85% 10%, rgba(255,90,31,.25), transparent 65%),
+        radial-gradient(700px 500px at 0% 100%, rgba(198,255,26,.16), transparent 65%), var(--ink); }
+    .hero .wrap { display: grid; gap: 40px; grid-template-columns: 1.25fr 1fr; align-items: center; }
+    @media (max-width: 900px) { .hero .wrap { grid-template-columns: 1fr; } }
+    .hero h1 { font-size: clamp(76px, 15vw, 190px); line-height: .82; margin: 18px 0 0; }
+    .hero h1 .out { -webkit-text-stroke: 2px var(--white); color: transparent; display: block; }
+    .hero .lead { font-size: clamp(18px, 2vw, 22px); font-weight: 600; max-width: 560px; margin-top: 22px; }
+    .hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero .socials { margin-top: 26px; }
+    .screen { position: relative; transform: rotate(2deg); }
+    .screen .thumb { box-shadow: 0 0 0 3px var(--volt), 18px 18px 0 var(--blaze); }
+    .screen .big { font-size: clamp(30px, 4vw, 46px); }
+    .screen .live { position: absolute; top: -14px; right: 16px; z-index: 2; }
+    .screen .chat { position: absolute; left: -18px; bottom: -26px; background: var(--card); border: 1px solid var(--line); padding: 12px 14px; font-size: 14px; width: 240px; transform: rotate(-4deg); }
+    .screen .chat p + p { margin-top: 4px; }
+    .screen .chat b { color: var(--volt); }
+    .screen .chat b.o { color: var(--blaze); }
+    @media (max-width: 520px) { .screen .chat { left: 0; width: 200px; } }
+
+    .stats { padding: 56px 0 30px; }
+    .stats .wrap { display: grid; gap: 20px; grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 760px) { .stats .wrap { grid-template-columns: 1fr 1fr; } }
+    .stat { padding: 18px 0; border-top: 3px solid var(--volt); }
+
+    section.block { padding: 70px 0; }
+    .sec-head { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 28px; }
+    .sec-head h2 { font-size: clamp(46px, 8vw, 96px); margin-top: 10px; }
+
+    .live-grid { display: grid; gap: 24px; grid-template-columns: 1.3fr 1fr; }
+    @media (max-width: 860px) { .live-grid { grid-template-columns: 1fr; } }
+    .now { padding: 26px; background: linear-gradient(120deg, #9146ff, #4a17b8); clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px); }
+    .now h3 { font-size: clamp(40px, 6vw, 70px); margin: 14px 0 10px; }
+    .now p { font-size: 18px; max-width: 460px; }
+    .now .btn { margin-top: 20px; }
+    .now .days { display: flex; gap: 6px; margin-top: 18px; }
+    .now .days i { flex: 1; height: 10px; background: rgba(255,255,255,.25); }
+    .now .days i.on { background: var(--volt); }
+
+    .vids { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 860px) { .vids { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .vids { grid-template-columns: 1fr; } }
+    .vid { display: block; text-decoration: none; cursor: pointer; background: none; border: 0; padding: 0; text-align: left; }
+    .vid .thumb { transition: transform .15s; }
+    .vid:hover .thumb { transform: rotate(-1.5deg) scale(1.03); box-shadow: 0 0 0 3px var(--volt); }
+    .vid strong { display: block; margin-top: 12px; font: 400 22px/1.05 var(--display); text-transform: uppercase; }
+    .vid small { color: var(--muted); }
+
+    .broski { background: var(--ink-2); position: relative; overflow: hidden; }
+    .broski::before { content: ""; position: absolute; inset: 0 0 auto; height: 8px; background: var(--siren); animation: siren 1.2s steps(2) infinite; }
+    .broski .wrap { display: grid; gap: 40px; grid-template-columns: 1fr 1fr; align-items: center; }
+    @media (max-width: 860px) { .broski .wrap { grid-template-columns: 1fr; } }
+    .broski h2 { font-size: clamp(56px, 9vw, 120px); }
+    .broski h2 span { color: transparent; -webkit-text-stroke: 2px var(--siren-b); }
+    .broski p { font-size: 18px; margin-top: 16px; max-width: 520px; }
+    .shield { aspect-ratio: 4/3; display: grid; place-items: center; background: var(--card); position: relative;
+      background-image: radial-gradient(circle at 30% 30%, rgba(255,43,74,.4), transparent 45%), radial-gradient(circle at 70% 30%, rgba(47,123,255,.4), transparent 45%); }
+    .shield b { font: 400 clamp(60px, 10vw, 120px)/1 var(--display); text-transform: uppercase; transform: rotate(-6deg); text-shadow: 6px 6px 0 var(--ink); }
+    .shield small { position: absolute; bottom: 14px; left: 14px; font: 700 11px/1 var(--hud); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+    .p-grid { display: grid; gap: 16px; grid-template-columns: repeat(3, 1fr); }
+    @media (max-width: 860px) { .p-grid { grid-template-columns: 1fr; } }
+
+    .merch { display: grid; gap: 16px; grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 860px) { .merch { grid-template-columns: 1fr 1fr; } }
+    .item { background: var(--card); border: 1px solid var(--line); text-decoration: none; display: block; }
+    .item .art { aspect-ratio: 1; display: grid; place-items: center; font: 400 54px/1 var(--display); color: var(--ink); background: var(--volt); }
+    .item:nth-child(2) .art { background: var(--blaze); }
+    .item:nth-child(3) .art { background: var(--white); }
+    .item:nth-child(4) .art { background: var(--siren); color: var(--white); }
+    .item div { padding: 12px 14px; }
+    .item strong { display: block; font: 700 14px/1.2 var(--hud); letter-spacing: .08em; text-transform: uppercase; }
+    .item small { color: var(--muted); }
+
+    .biz { text-align: center; padding: 90px 0; background: radial-gradient(700px 400px at 50% 100%, rgba(198,255,26,.18), transparent 70%), var(--ink); }
+    .biz h2 { font-size: clamp(56px, 11vw, 140px); margin: 14px 0; }
+    .biz p { max-width: 560px; margin: 0 auto 26px; color: var(--muted); font-size: 18px; }
+    .biz .ctas { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .foot { border-top: 1px solid var(--line); padding: 30px 0; }
+    .foot .wrap { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; justify-content: space-between; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">One-page concept for Jaybroski, made by <a href="https://distortedbrands.com/web/">Distorted Web</a> · <a href="../">see all three</a></div>
+
+  <header class="nav">
+    <div class="wrap">
+      <span class="badge" aria-hidden="true">JB</span>
+      <a class="name" href="#top">Jaybroski</a>
+      <ul>
+        <li><a href="#live">Live</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#broski">Officer Broski</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="#merch">Merch</a></li>
+      </ul>
+      <a class="btn btn-volt" href="#" data-open="dlg-biz">Work with Jay</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero grit">
+      <div class="wrap">
+        <div>
+          <span class="live">Live now · GTA VI</span>
+          <h1>Jay<span class="out">broski</span></h1>
+          <p class="lead">Call of Duty chaos, proximity chat crimes and a full GTA VI playthrough. Twitch Partner since 2014. Loud on purpose.</p>
+          <div class="ctas">
+            <a class="btn btn-twitch" href="https://www.twitch.tv/jaybroski"><span class="ico i-twitch"></span>Watch live</a>
+            <a class="btn" href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg"><span class="ico i-youtube"></span>Subscribe</a>
+          </div>
+          <nav class="socials" aria-label="Socials">
+            <a href="https://www.tiktok.com/@thejaybroski" aria-label="TikTok"><span class="ico i-tiktok"></span></a>
+            <a href="https://www.instagram.com/thejaybroskitv/" aria-label="Instagram"><span class="ico i-instagram"></span></a>
+            <a href="https://twitter.com/TheJayBroski" aria-label="X"><span class="ico i-x"></span></a>
+            <a href="https://discord.com/invite/Ztpg7hxD7X" aria-label="Discord"><span class="ico i-discord"></span></a>
+          </nav>
+        </div>
+        <div class="screen">
+          <span class="live">Live</span>
+          <div class="thumb c"><span class="big">GTA VI<br>Day 3!!!</span><span class="tag">Stream preview</span><span class="play"></span></div>
+          <div class="chat" aria-hidden="true">
+            <p><b>squadup22:</b> OFFICER BROSKI IS BACK</p>
+            <p><b class="o">vicecitykid:</b> bro is NOT stopping at that light 😭</p>
+            <p><b>thejay18Freak</b> thejay18Freak thejay18Freak</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-hidden="true"><div class="track">
+      <span>Warzone forever</span><span>GTA VI day by day</span><span>Monster Energy creator</span><span>Officer Broski on patrol</span><span>Twitch Partner</span>
+      <span>Warzone forever</span><span>GTA VI day by day</span><span>Monster Energy creator</span><span>Officer Broski on patrol</span><span>Twitch Partner</span>
+    </div></div>
+
+    <section class="stats" aria-label="Channel numbers">
+      <div class="wrap">
+        <div class="stat"><strong>89K+</strong><span>Twitch followers</span></div>
+        <div class="stat"><strong>4,900</strong><span>Peak live viewers</span></div>
+        <div class="stat"><strong>Top 30</strong><span>English Warzone channels</span></div>
+        <div class="stat"><strong>12 yrs</strong><span>On Twitch</span></div>
+      </div>
+    </section>
+
+    <section class="block" id="live">
+      <div class="wrap">
+        <div class="sec-head"><div><p class="eyebrow">On stream</p><h2>Pull up <span class="hype-text">live</span></h2></div>
+          <a class="btn" href="#" data-open="dlg-sched">Full schedule</a></div>
+        <div class="live-grid">
+          <div class="now">
+            <span class="live">Now playing</span>
+            <h3>GTA VI playthrough</h3>
+            <p>Every mission, every police chase, every bad decision chat talks him into. New day, new chaos.</p>
+            <div class="days" aria-label="Progress"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i><i></i><i></i></div>
+            <a class="btn btn-volt" href="https://www.twitch.tv/jaybroski"><span class="ico i-twitch"></span>Join the stream</a>
+          </div>
+          <div class="sched">
+            <div><b>Mon</b><span>Afternoon into night</span></div>
+            <div><b>Tue</b><span>Afternoon into night</span></div>
+            <div><b>Wed</b><span>Afternoon into night</span></div>
+            <div><b>Thu</b><span>Afternoon into night</span></div>
+            <div><b>Fri</b><span>Evening session</span></div>
+            <div class="off"><b>Sat & Sun</b><span>Clips and recovery</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="videos" style="padding-top:20px">
+      <div class="wrap">
+        <div class="sec-head"><div><p class="eyebrow">Latest uploads</p><h2>The <span class="hype-text">clips</span></h2></div>
+          <a class="btn" href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg"><span class="ico i-youtube"></span>All videos</a></div>
+        <div class="vids">
+          <button class="vid" data-open="dlg-vid" data-title="Jaybroski takes over Rebirth Island"><div class="thumb"><span class="big">Rebirth<br>takeover</span><span class="tag">Warzone</span><span class="play"></span></div><strong>Jaybroski takes over Rebirth Island</strong><small>Sample title · 4,900 watching live</small></button>
+          <button class="vid" data-open="dlg-vid" data-title="Officer Broski pulls over the whole lobby"><div class="thumb c"><span class="big">Officer<br>Broski</span><span class="tag">Proximity chat</span><span class="play"></span></div><strong>Officer Broski pulls over the whole lobby</strong><small>Sample title</small></button>
+          <button class="vid" data-open="dlg-vid" data-title="GTA VI day 3: chat picked my crimes"><div class="thumb b"><span class="big">GTA VI<br>day 3</span><span class="tag">Full gameplay</span><span class="play"></span></div><strong>GTA VI day 3: chat picked my crimes</strong><small>Sample title</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="block broski" id="broski">
+      <div class="wrap">
+        <div>
+          <p class="eyebrow">Fan favorite</p>
+          <h2>Officer <span>Broski</span></h2>
+          <p>Riot shield up, proximity chat on, "Bad Boys" on the speakers. Jay's Warzone cop persona turns random lobbies into a comedy show, and the clips travel far past Twitch.</p>
+          <a class="btn btn-volt" href="#" data-open="dlg-about" style="margin-top:24px">Meet Jay</a>
+        </div>
+        <div class="shield"><b>Freeze!</b><small>Placeholder for an Officer Broski clip or photo</small></div>
+      </div>
+    </section>
+
+    <section class="block" id="partners">
+      <div class="wrap">
+        <div class="sec-head"><div><p class="eyebrow">Brands Jay rolls with</p><h2>Partners</h2></div></div>
+        <div class="p-grid">
+          <div class="partner"><span class="kind">Energy partner</span><span class="logo">Monster Energy</span><p>Part of the Monster Energy gaming roster, with Monster-backed Call of Duty streams.</p><a class="code" href="https://www.monsterenergy.com/en-us/gaming/jaybroski/">View on Monster</a></div>
+          <div class="partner"><span class="kind">Gear</span><span class="logo">Demon Workshop</span><p>The custom controller Jay plays on. Grab one through his link.</p><a class="code" href="https://demon-workshop.com/?ref=jaybroski">ref: jaybroski</a></div>
+          <div class="partner open"><span class="kind">Open slot</span><span class="logo">Your brand here</span><p>Sponsored streams, YouTube integrations and event takeovers.</p><a class="code" href="#" data-open="dlg-biz">Start a campaign</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="merch" style="padding-top:20px">
+      <div class="wrap">
+        <div class="sec-head"><div><p class="eyebrow">Official drip</p><h2>Merch</h2></div>
+          <a class="btn" href="https://streamlabs.com/thejaybroski/merch">Shop the store</a></div>
+        <div class="merch">
+          <a class="item" href="https://streamlabs.com/thejaybroski/merch"><span class="art">JB</span><div><strong>Broski tee</strong><small>Sample item</small></div></a>
+          <a class="item" href="https://streamlabs.com/thejaybroski/merch"><span class="art">🧢</span><div><strong>Squad hat</strong><small>Sample item</small></div></a>
+          <a class="item" href="https://streamlabs.com/thejaybroski/merch"><span class="art">BRO</span><div><strong>Hoodie</strong><small>Sample item</small></div></a>
+          <a class="item" href="https://streamlabs.com/thejaybroski/merch"><span class="art">🚨</span><div><strong>Officer Broski mug</strong><small>Sample item</small></div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="biz grit">
+      <div class="wrap">
+        <p class="eyebrow">Brands & business</p>
+        <h2>Let's get <span class="hype-text">loud</span></h2>
+        <p>Jay brings a live, hyped-up Call of Duty audience that shows up every weekday. Sponsored streams, integrations, launches and events.</p>
+        <div class="ctas">
+          <a class="btn btn-volt" href="#" data-open="dlg-biz">Send an inquiry</a>
+          <a class="btn" href="mailto:thejaybroski@gmail.com">thejaybroski@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span class="eyebrow">Jaybroski · stay locked in</span>
+      <nav class="socials" aria-label="Socials">
+        <a href="https://www.twitch.tv/jaybroski" aria-label="Twitch"><span class="ico i-twitch"></span></a>
+        <a href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg" aria-label="YouTube"><span class="ico i-youtube"></span></a>
+        <a href="https://www.tiktok.com/@thejaybroski" aria-label="TikTok"><span class="ico i-tiktok"></span></a>
+        <a href="https://www.instagram.com/thejaybroskitv/" aria-label="Instagram"><span class="ico i-instagram"></span></a>
+        <a href="https://twitter.com/TheJayBroski" aria-label="X"><span class="ico i-x"></span></a>
+        <a href="https://discord.com/invite/Ztpg7hxD7X" aria-label="Discord"><span class="ico i-discord"></span></a>
+      </nav>
+    </div>
+  </footer>
+  <footer class="credit">Designed by <a href="https://distortedbrands.com/web/">Distorted Web</a> · Websites that cut through.</footer>
+
+  <!-- Pop-up windows -->
+  <dialog id="dlg-vid" aria-label="Video">
+    <div class="dlg">
+      <button class="x" data-close aria-label="Close">×</button>
+      <div class="thumb"><span class="play"></span></div>
+      <h3 data-slot="title" style="font-size:30px;margin-top:16px">Video</h3>
+      <p class="muted">The real YouTube video plays right here once the site is live.</p>
+      <a class="btn btn-volt" style="margin-top:16px" href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg"><span class="ico i-youtube"></span>Open YouTube</a>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-sched" aria-label="Stream schedule">
+    <div class="dlg">
+      <button class="x" data-close aria-label="Close">×</button>
+      <p class="eyebrow">Stream schedule</p>
+      <h3>When Jay's live</h3>
+      <div class="sched">
+        <div><b>Mon</b><span>About 2:30 to 8:30 PM</span></div>
+        <div><b>Tue</b><span>About 2:30 to 8:30 PM</span></div>
+        <div><b>Wed</b><span>About 2:30 to 9 PM</span></div>
+        <div><b>Thu</b><span>About 2:30 to 8 PM</span></div>
+        <div><b>Fri</b><span>About 6 to 10:30 PM</span></div>
+        <div class="off"><b>Sat & Sun</b><span>Off</span></div>
+      </div>
+      <p class="muted" style="margin-top:14px;font-size:14px">Times are a sample based on recent streams. Jay sets the real ones.</p>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-about" aria-label="About Jay">
+    <div class="dlg">
+      <button class="x" data-close aria-label="Close">×</button>
+      <p class="eyebrow">About</p>
+      <h3>Meet Jaybroski</h3>
+      <p>Jay has been streaming on Twitch since 2014 and became a Twitch Partner on the back of Call of Duty: Warzone, where his comedy and proximity chat bits turned him into one of the most-watched English Warzone channels.</p>
+      <p>Now he's taking the same energy to GTA VI, one chaotic day at a time. "I'm funny sometimes."</p>
+      <p class="muted" style="font-size:14px">Sample bio. Jay's own story goes here.</p>
+    </div>
+  </dialog>
+
+  <dialog id="dlg-biz" aria-label="Business inquiry">
+    <div class="dlg">
+      <button class="x" data-close aria-label="Close">×</button>
+      <p class="eyebrow">Brands & business</p>
+      <h3>Work with Jay</h3>
+      <form class="form" data-mock>
+        <div class="row">
+          <label>Name<input required name="name" autocomplete="name"></label>
+          <label>Brand / company<input required name="company"></label>
+        </div>
+        <label>Email<input required type="email" name="email" autocomplete="email"></label>
+        <label>What are you planning?
+          <select name="type"><option>Sponsored stream</option><option>YouTube integration</option><option>Game or product launch</option><option>Event appearance</option><option>Something else</option></select>
+        </label>
+        <label>Details<textarea name="details" rows="3" placeholder="Dates, budget range, goals"></textarea></label>
+        <button class="btn btn-volt" type="submit">Send it</button>
+      </form>
+      <div class="sent" hidden><strong>Inquiry locked in</strong>Jay's team will get back to you soon.</div>
+    </div>
+  </dialog>
+
+  <script src="../assets/js/modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jaybroski | Links</title>
+  <meta name="description" content="Jaybroski: Call of Duty chaos, GTA VI and Officer Broski. Every link in one place.">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <style>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(600px 380px at 50% -140px, rgba(198,255,26,.22), transparent 70%),
+        radial-gradient(500px 360px at 115% 35%, rgba(255,90,31,.18), transparent 70%),
+        radial-gradient(500px 360px at -15% 75%, rgba(47,123,255,.14), transparent 70%),
+        var(--ink);
+    }
+    .page { width: min(540px, 100% - 32px); margin: 0 auto; padding: 46px 0 10px; }
+    .head { text-align: center; }
+    .head .badge { --s: 112px; margin: 0 auto 20px; }
+    .head h1 { font-size: clamp(64px, 18vw, 96px); line-height: .85; }
+    .head h1 span { display: block; font-size: .34em; letter-spacing: .3em; color: var(--muted); font-family: var(--hud); margin-top: 10px; }
+    .head .bio { margin: 16px auto 0; max-width: 400px; font-size: 18px; font-weight: 600; }
+    .head .bio em { color: var(--volt); font-style: normal; }
+    .head .socials { justify-content: center; margin-top: 18px; }
+
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+    .chips span { padding: 6px 10px; background: var(--card); border: 1px solid var(--line); font: 700 11px/1 var(--hud); letter-spacing: .12em; text-transform: uppercase; }
+    .chips span b { color: var(--volt); }
+
+    .livecard {
+      margin-top: 26px; display: flex; align-items: center; gap: 14px; padding: 16px 18px; text-decoration: none;
+      background: linear-gradient(110deg, #9146ff, #5b1fd1); position: relative; overflow: hidden;
+      clip-path: polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px);
+      transition: transform .12s;
+    }
+    .livecard:hover { transform: scale(1.02) rotate(-.5deg); }
+    .livecard .ico { width: 30px; height: 30px; }
+    .livecard strong { display: block; font: 400 24px/1 var(--display); text-transform: uppercase; }
+    .livecard small { opacity: .85; font-size: 14px; }
+    .livecard .live { margin-left: auto; }
+
+    .label { margin: 30px 2px 12px; }
+    .links { display: grid; gap: 10px; }
+    .lnk {
+      display: flex; align-items: center; gap: 14px; padding: 16px 18px; min-height: 64px; text-decoration: none;
+      background: var(--card); border: 1px solid var(--line);
+      font: 700 16px/1.2 var(--hud); letter-spacing: .06em; text-transform: uppercase;
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      transition: transform .12s, background .12s, color .12s;
+    }
+    .lnk:hover { transform: translateX(6px); background: var(--volt); color: var(--ink); }
+    .lnk .ico { width: 22px; height: 22px; }
+    .lnk .em { width: 22px; text-align: center; font-size: 20px; }
+    .lnk .sub { margin-left: auto; font: 600 13px/1.2 var(--body); letter-spacing: 0; text-transform: none; color: var(--muted); text-align: right; }
+    .lnk:hover .sub { color: inherit; }
+    .lnk.hot { background: var(--volt); color: var(--ink); border-color: var(--volt); }
+    .lnk.hot .sub { color: var(--ink); opacity: .7; }
+    .lnk.hot:hover { background: var(--white); }
+
+    .latest { display: block; text-decoration: none; background: var(--card); border: 1px solid var(--line); }
+    .latest .meta { padding: 14px 16px; }
+    .latest .meta strong { display: block; font: 400 22px/1.05 var(--display); text-transform: uppercase; }
+    .latest .meta small { color: var(--muted); }
+
+    .partners { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .p-tile { display: block; padding: 16px; text-decoration: none; background: var(--card); border: 1px solid var(--line); transition: border-color .12s, transform .12s; }
+    .p-tile:hover { border-color: var(--volt); transform: translateY(-3px); }
+    .p-tile b { display: block; font: 400 22px/1 var(--display); text-transform: uppercase; }
+    .p-tile small { display: block; margin-top: 6px; color: var(--muted); font-size: 13px; line-height: 1.35; }
+    .p-tile .k { font: 700 10px/1 var(--hud); letter-spacing: .16em; text-transform: uppercase; color: var(--blaze); margin-bottom: 8px; display: block; }
+
+    .biz { margin-top: 30px; padding: 22px; text-align: center; border: 2px dashed var(--line); }
+    .biz h2 { font-size: 34px; }
+    .biz p { color: var(--muted); margin: 8px 0 16px; font-size: 15px; }
+    .ticker { margin: 34px -40px 0; }
+  </style>
+</head>
+<body>
+  <div class="concept-bar">Link page concept for Jaybroski, made by <a href="https://distortedbrands.com/web/">Distorted Web</a> · <a href="../">see all three</a></div>
+
+  <main class="page">
+    <header class="head">
+      <div class="badge" aria-hidden="true">JB</div>
+      <h1 class="hype-text">Jaybroski<span>@thejaybroski</span></h1>
+      <p class="bio">Warzone chaos, Officer Broski patrols and a full GTA VI run. <em>I'm funny sometimes.</em></p>
+      <div class="chips">
+        <span><b>89K+</b> Twitch</span><span>Twitch Partner</span><span>Monster Energy</span><span>Since 2014</span>
+      </div>
+      <nav class="socials" aria-label="Socials">
+        <a href="https://www.twitch.tv/jaybroski" aria-label="Twitch"><span class="ico i-twitch"></span></a>
+        <a href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg" aria-label="YouTube"><span class="ico i-youtube"></span></a>
+        <a href="https://www.tiktok.com/@thejaybroski" aria-label="TikTok"><span class="ico i-tiktok"></span></a>
+        <a href="https://www.instagram.com/thejaybroskitv/" aria-label="Instagram"><span class="ico i-instagram"></span></a>
+        <a href="https://twitter.com/TheJayBroski" aria-label="X"><span class="ico i-x"></span></a>
+        <a href="https://discord.com/invite/Ztpg7hxD7X" aria-label="Discord"><span class="ico i-discord"></span></a>
+      </nav>
+    </header>
+
+    <a class="livecard" href="https://www.twitch.tv/jaybroski">
+      <span class="ico i-twitch"></span>
+      <span><strong>GTA VI playthrough</strong><small>Pull up on Twitch. Chat runs the city.</small></span>
+      <span class="live">Live</span>
+    </a>
+
+    <p class="eyebrow label">Tap in</p>
+    <div class="links">
+      <a class="lnk hot" href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg"><span class="ico i-youtube"></span>Sub on YouTube<span class="sub">Full gameplays</span></a>
+      <a class="lnk" href="https://www.twitch.tv/jaybroski"><span class="ico i-twitch"></span>Twitch<span class="sub">Live Mon to Fri</span></a>
+      <a class="lnk" href="https://www.tiktok.com/@thejaybroski"><span class="ico i-tiktok"></span>TikTok<span class="sub">Clips daily</span></a>
+      <a class="lnk" href="https://discord.com/invite/Ztpg7hxD7X"><span class="ico i-discord"></span>Join the Discord<span class="sub">The squad</span></a>
+      <a class="lnk" href="https://streamlabs.com/thejaybroski/merch"><span class="em">🧢</span>Merch store<span class="sub">Official drip</span></a>
+    </div>
+
+    <p class="eyebrow label">Latest drop</p>
+    <a class="latest" href="https://www.youtube.com/channel/UCIKHN06ka6138612WOF50bg">
+      <div class="thumb"><span class="big">Rebirth Island<br>takeover</span><span class="tag">4,900 live</span><span class="play"></span></div>
+      <div class="meta"><strong>Jaybroski takes over Rebirth Island</strong><small>Sample title · newest upload shows here automatically</small></div>
+    </a>
+
+    <p class="eyebrow label">Partners</p>
+    <div class="partners">
+      <a class="p-tile" href="https://www.monsterenergy.com/en-us/gaming/jaybroski/"><span class="k">Energy partner</span><b>Monster Energy</b><small>Official Monster gaming roster</small></a>
+      <a class="p-tile" href="https://demon-workshop.com/?ref=jaybroski"><span class="k">My controller</span><b>Demon Workshop</b><small>The custom controller I use</small></a>
+    </div>
+
+    <section class="biz">
+      <p class="eyebrow">Brands & business</p>
+      <h2>Run a campaign with Jay</h2>
+      <p>Sponsored streams, YouTube integrations, event takeovers.</p>
+      <a class="btn btn-volt" href="mailto:thejaybroski@gmail.com">Email the business line</a>
+    </section>
+  </main>
+
+  <div class="ticker" aria-hidden="true"><div class="track">
+    <span>Stay locked in</span><span>Officer Broski on patrol</span><span>GTA VI day by day</span><span>Warzone forever</span>
+    <span>Stay locked in</span><span>Officer Broski on patrol</span><span>GTA VI day by day</span><span>Warzone forever</span>
+  </div></div>
+
+  <footer class="credit">Designed by <a href="https://distortedbrands.com/web/">Distorted Web</a> · Websites that cut through.</footer>
+</body>
+</html>
